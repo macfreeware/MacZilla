@@ -110,6 +110,36 @@ final class AppModel {
         if currentID == session.id { currentID = sessions[min(i, sessions.count - 1)].id }
     }
 
+    /// ⌘W: closes Settings, About or the Site Manager when one of them is in
+    /// front, otherwise the current tab.
+    func closeKeyWindowOrTab() {
+        if let key = NSApp.keyWindow, !Self.isMainWindow(key) { return key.performClose(nil) }
+        askCloseTab(current)
+    }
+
+    static func isMainWindow(_ window: NSWindow) -> Bool {
+        window.identifier?.rawValue.hasPrefix("main") == true
+    }
+
+    /// Opens the main window again; set by ContentView.
+    @ObservationIgnored var openMainWindow: (() -> Void)?
+
+    /// Asks before quitting while transfers are queued or running. If the
+    /// user stays, the main window comes back (it may have been closed).
+    func confirmQuit() -> Bool {
+        let pending = queue.pendingCount
+        guard pending > 0 else { return true }
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+        alert.messageText = String(localized: "MacZilla'dan çıkılsın mı?")
+        alert.informativeText = String(localized: "\(pending) aktarım sürüyor ya da sırada; çıkarsanız durdurulacak.")
+        alert.addButton(withTitle: String(localized: "Çık")).hasDestructiveAction = true
+        alert.addButton(withTitle: String(localized: "Vazgeç"))
+        if alert.runModal() == .alertFirstButtonReturn { return true }
+        openMainWindow?()
+        return false
+    }
+
     func askDisconnect(_ session: Session) {
         let active = session.activeTransfers
         guard active > 0 else { return session.disconnect() }

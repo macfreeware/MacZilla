@@ -1,6 +1,7 @@
 /* MacZilla — English. Keys are the Turkish source strings. */
 
 " (kopya)" = " (copy)";
+"%lld aktarım sürüyor ya da sırada; çıkarsanız durdurulacak." = "%lld transfers are running or queued; they will be stopped if you quit.";
 "%lld site seçildi" = "%lld sites selected";
 "\"%@\" için yeni ad:" = "New name for \"%@\":";
 "%@ bağlantısı açık. %@ için yeni bir sekme açılsın mı, yoksa bu sekmedeki bağlantı mı değiştirilsin? Bu davranışı Ayarlar'dan değiştirebilirsiniz." = "%@ is connected. Open %@ in a new tab, or replace the connection in this tab? You can change this in Settings.";
@@ -287,8 +288,9 @@
 "MacZilla %@ yayımlandı" = "MacZilla %@ is available";
 "MacZilla güncel" = "MacZilla is up to date";
 "MacZilla Hakkında" = "About MacZilla";
-"MacZilla özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 (GPL-3.0) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Program hiçbir garanti olmaksızın sunulur." = "MacZilla is free software: you can use, modify and redistribute it under the terms of the GNU General Public License version 3 (GPL-3.0). It comes with no warranty.";
+"MacZilla özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 ya da (isteğinize bağlı olarak) daha sonraki bir sürümünün (GPL-3.0-or-later) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Program hiçbir garanti olmaksızın sunulur." = "MacZilla is free software: you can use, modify and redistribute it under the terms of the GNU General Public License, version 3 or (at your option) any later version (GPL-3.0-or-later). It comes with no warranty.";
 "MacZilla FileZilla projesi ile bağlantılı değildir. SFTP bağlantısı macOS ile gelen OpenSSH istemcisi üzerinden kurulur." = "MacZilla is not affiliated with the FileZilla project. SFTP connections are made through the OpenSSH client that comes with macOS.";
+"MacZilla'dan çıkılsın mı?" = "Quit MacZilla?";
 "Masaüstü" = "Desktop";
 "MB'a kadar" = "MB or less";
 "Nokta ile başlayan dosyaları göster" = "Show files starting with a dot";
@@ -407,6 +409,7 @@
 "Var olan bir grubu seç" = "Choose an existing group";
 "Varsayılan uzak dizin" = "Default remote folder";
 "Varsayılan yerel dizin" = "Default local folder";
+"Vazgeç" = "Cancel";
 "Veri bağlantısı kurulamadı (%@:%@)." = "Could not open the data connection (%@:%@).";
 "Veriler" = "Data";
 "Yalnızca bir tarafta" = "Only on one side";
@@ -459,6 +462,7 @@
 "~/Sites" = "~/Sites";
 "Çoğalt" = "Duplicate";
 "Çöp Sepeti'ne Taşı" = "Move to Trash";
+"Çık" = "Quit";
 "Önceki Sekme" = "Previous Tab";
 "Özel anahtar" = "Private key";
 "Öğeler Çöp Sepeti'nden geri alınabilir." = "You can get the items back from the Trash.";

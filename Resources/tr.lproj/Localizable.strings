@@ -1,6 +1,7 @@
 /* MacZilla — Türkçe. Anahtarlar kaynak metinlerin kendisidir. */
 
 " (kopya)" = " (kopya)";
+"%lld aktarım sürüyor ya da sırada; çıkarsanız durdurulacak." = "%lld aktarım sürüyor ya da sırada; çıkarsanız durdurulacak.";
 "%lld site seçildi" = "%lld site seçildi";
 "\"%@\" için yeni ad:" = "\"%@\" için yeni ad:";
 "%@ bağlantısı açık. %@ için yeni bir sekme açılsın mı, yoksa bu sekmedeki bağlantı mı değiştirilsin? Bu davranışı Ayarlar'dan değiştirebilirsiniz." = "%@ bağlantısı açık. %@ için yeni bir sekme açılsın mı, yoksa bu sekmedeki bağlantı mı değiştirilsin? Bu davranışı Ayarlar'dan değiştirebilirsiniz.";
@@ -290,8 +291,9 @@
 "MacZilla %@ yayımlandı" = "MacZilla %@ yayımlandı";
 "MacZilla güncel" = "MacZilla güncel";
 "MacZilla Hakkında" = "MacZilla Hakkında";
-"MacZilla özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 (GPL-3.0) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Program hiçbir garanti olmaksızın sunulur." = "MacZilla özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 (GPL-3.0) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Program hiçbir garanti olmaksızın sunulur.";
+"MacZilla özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 ya da (isteğinize bağlı olarak) daha sonraki bir sürümünün (GPL-3.0-or-later) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Program hiçbir garanti olmaksızın sunulur." = "MacZilla özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 ya da (isteğinize bağlı olarak) daha sonraki bir sürümünün (GPL-3.0-or-later) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Program hiçbir garanti olmaksızın sunulur.";
 "MacZilla FileZilla projesi ile bağlantılı değildir. SFTP bağlantısı macOS ile gelen OpenSSH istemcisi üzerinden kurulur." = "MacZilla FileZilla projesi ile bağlantılı değildir. SFTP bağlantısı macOS ile gelen OpenSSH istemcisi üzerinden kurulur.";
+"MacZilla'dan çıkılsın mı?" = "MacZilla'dan çıkılsın mı?";
 "Masaüstü" = "Masaüstü";
 "MB'a kadar" = "MB'a kadar";
 "Nokta ile başlayan dosyaları göster" = "Nokta ile başlayan dosyaları göster";
@@ -410,6 +412,7 @@
 "Var olan bir grubu seç" = "Var olan bir grubu seç";
 "Varsayılan uzak dizin" = "Varsayılan uzak dizin";
 "Varsayılan yerel dizin" = "Varsayılan yerel dizin";
+"Vazgeç" = "Vazgeç";
 "Veri bağlantısı kurulamadı (%@:%@)." = "Veri bağlantısı kurulamadı (%@:%@).";
 "Veriler" = "Veriler";
 "Yalnızca bir tarafta" = "Yalnızca bir tarafta";
@@ -462,6 +465,7 @@
 "~/Sites" = "~/Sites";
 "Çoğalt" = "Çoğalt";
 "Çöp Sepeti'ne Taşı" = "Çöp Sepeti'ne Taşı";
+"Çık" = "Çık";
 "Önceki Sekme" = "Önceki Sekme";
 "Özel anahtar" = "Özel anahtar";
 "Öğeler Çöp Sepeti'nden geri alınabilir." = "Öğeler Çöp Sepeti'nden geri alınabilir.";

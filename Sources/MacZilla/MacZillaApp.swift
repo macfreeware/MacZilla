@@ -1,6 +1,8 @@
 import SwiftUI
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    weak var model: AppModel?
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.regular)
         NSApp.activate(ignoringOtherApps: true)
@@ -16,6 +18,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
+
+    /// ⌘Q, or closing the main window: asks first while transfers are running.
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        MainActor.assumeIsolated { model?.confirmQuit() ?? true } ? .terminateNow : .terminateCancel
+    }
 }
 
 @main
@@ -32,6 +39,7 @@ struct MacZillaApp: App {
                 .environment(model)
                 .environment(sites)
                 .frame(minWidth: 900, minHeight: 600)
+                .onAppear { delegate.model = model }
         }
         .defaultSize(width: 1320, height: 860)
         .commands {
@@ -55,9 +63,10 @@ struct MacZillaApp: App {
                     .keyboardShortcut("d")
                     .disabled(model.current.config == nil)
                 Divider()
-                Button("Sekmeyi Kapat") { model.askCloseTab(model.current) }
+                // Always enabled: otherwise ⌘W falls through to Close and shuts the
+                // main window. The last tab only disconnects.
+                Button("Sekmeyi Kapat") { model.closeKeyWindowOrTab() }
                     .keyboardShortcut("w")
-                    .disabled(model.sessions.count < 2)
             }
             CommandGroup(after: .toolbar) {
                 Button("Yenile") { model.current.refreshAll() }

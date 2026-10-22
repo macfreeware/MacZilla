@@ -8,7 +8,7 @@ enum AppInfo {
     static let developer = "Rafet SAPANCI"
     static let year = "2026"
     static let repositoryURL = URL(string: "https://gitlab.com/freeware2/maczilla")!
-    static let license = "GPL-3.0"
+    static let license = "GPL-3.0-or-later"
     static let licenseURL = URL(string: "https://gitlab.com/freeware2/maczilla/-/blob/main/LICENSE")!
 
     static var version: String? { Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String }
@@ -167,7 +167,7 @@ struct AboutView: View {
             Divider()
             VStack(alignment: .leading, spacing: 6) {
                 Text("© \(AppInfo.year) \(AppInfo.developer)").font(.callout)
-                Text("MacZilla özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 (GPL-3.0) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Program hiçbir garanti olmaksızın sunulur.")
+                Text("MacZilla özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 ya da (isteğinize bağlı olarak) daha sonraki bir sürümünün (GPL-3.0-or-later) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Program hiçbir garanti olmaksızın sunulur.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)

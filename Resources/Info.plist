@@ -34,7 +34,7 @@
 	<key>NSHighResolutionCapable</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2026 Rafet SAPANCI · GPL-3.0</string>
+	<string>© 2026 Rafet SAPANCI · GPL-3.0-or-later</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>MacZilla, yerel ağınızdaki FTP sunucularına bağlanmak için yerel ağ erişimine ihtiyaç duyar.</string>
 </dict>

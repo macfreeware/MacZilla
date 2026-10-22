@@ -45,6 +45,7 @@ struct ContentView: View {
         #if DEBUG
         .task { await DebugHooks.run(model, sites: sites, openWindow: openWindow, openSettings: openSettings) }
         #endif
+        .onAppear { model.openMainWindow = { [openWindow] in openWindow(id: "main") } }
         .task {
             DockProgress.shared.start(queue: model.queue)
             await model.checkForUpdates(manual: false)
