@@ -29,6 +29,8 @@
 > 3. On the line saying MacZilla was blocked, click **Open Anyway** and confirm with your password or Touch ID.
 >
 > Prefer Terminal? Run `xattr -dr com.apple.quarantine /Applications/MacZilla.app`, then open MacZilla.
+>
+> Step by step, and what to do if *Open Anyway* is missing: **[First launch](#first-launch-allow-maczilla-once)**.
 
 ## Screenshots
 
@@ -160,26 +162,24 @@ The package runs on Apple Silicon and Intel Macs; macOS 14 or later is required.
 1. Download the latest version with the [download button](https://gitlab.com/freeware2/maczilla/-/releases/permalink/latest/downloads/MacZilla.zip) at the top, or pick a version on the [Releases](https://gitlab.com/freeware2/maczilla/-/releases) page.
 2. Open the zip. Safari usually opens it by itself and a `MacZilla-<version>` folder appears in Downloads; if not, double-click the zip.
 3. Drag `MacZilla.app` from that folder to **Applications**. The `LICENSE.txt` next to it is the license text; it does not need to be installed.
+4. Open MacZilla. **The first time, macOS blocks it:** follow the steps below once.
 
-### First launch
+### First launch: allow MacZilla once
 
-The app is not signed with an Apple developer ID and has not been notarized by Apple, so macOS blocks it the first time. You only need to allow it once:
+> [!important] macOS blocks MacZilla the first time you open it. This is expected, not a fault.
+> MacZilla is not signed with an Apple developer ID and is not notarized by Apple, so macOS cannot verify it. Allow it once and it opens normally from then on:
+>
+> 1. **Double-click MacZilla.** macOS says Apple could not verify it and does not open it. Click **Done**. Do **not** click *Move to Trash*.
+> 2. **Open System Settings ▸ Privacy & Security** and scroll down to the **Security** section.
+> 3. **Click Open Anyway** on the line saying MacZilla was blocked, then confirm with your Mac password or Touch ID. If macOS asks once more, choose **Open Anyway** again.
+>
+> Don't see *Open Anyway*? Repeat step 1: the button only appears after an attempt to open the app. On macOS 14 you can also right-click MacZilla in the Finder and choose **Open**.
 
-1. Try to open MacZilla by double-clicking it. macOS shows a warning that Apple could not verify the app and does not open it. Close the warning with **Done**; do not choose **Move to Trash**.
-2. Open **System Settings → Privacy & Security** and scroll down to the **Security** section. On the line saying MacZilla was blocked, click **Open Anyway**. If you do not see the button, repeat step 1; it only appears after an attempt to open the app.
-3. Confirm with your Mac password (or Touch ID). If macOS asks once more, choose **Open Anyway**.
-
-MacZilla opens, and later launches show no warning. On macOS 14, right-clicking the app in the Finder and choosing **Open** is enough as well.
-
-### With Terminal
-
-If you use Terminal, you can skip the warning. After putting `MacZilla.app` in Applications, this command removes the quarantine flag macOS puts on files downloaded from the internet:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/MacZilla.app
-```
-
-MacZilla then opens with a double-click as usual.
+> [!tip] Using Terminal? One command does the same.
+> ```bash
+> xattr -dr com.apple.quarantine /Applications/MacZilla.app
+> ```
+> It removes the quarantine flag macOS puts on files downloaded from the internet. MacZilla then opens with a double-click as usual.
 
 ### Verifying the download
 

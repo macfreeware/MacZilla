@@ -29,6 +29,8 @@
 > 3. MacZilla'nın engellendiğini belirten satırda **Yine de Aç**'a tıklayın ve parolanız ya da Touch ID ile onaylayın.
 >
 > Terminal'i mi tercih edersiniz? `xattr -dr com.apple.quarantine /Applications/MacZilla.app` komutunu çalıştırıp MacZilla'yı açın.
+>
+> Adım adım anlatım ve *Yine de Aç* görünmezse ne yapacağınız: **[İlk açılış](#maczillayı-ilk-açış-bir-kez-izin-verin)**.
 
 ## Ekran görüntüleri
 
@@ -160,26 +162,24 @@ Paket Apple Silicon ve Intel Mac'lerde çalışır; macOS 14 veya üstü gerekir
 1. En yeni sürümü en üstteki [indirme düğmesiyle](https://gitlab.com/freeware2/maczilla/-/releases/permalink/latest/downloads/MacZilla.zip) indirin ya da [Releases](https://gitlab.com/freeware2/maczilla/-/releases) sayfasından bir sürüm seçin.
 2. Zip'i açın. Safari genellikle kendiliğinden açar ve İndirilenler klasöründe bir `MacZilla-<sürüm>` klasörü belirir; açmazsa zip'e çift tıklayın.
 3. Klasördeki `MacZilla.app`'i **Uygulamalar** klasörüne sürükleyin. Yanındaki `LICENSE.txt` lisans metnidir, kurulması gerekmez.
+4. MacZilla'yı açın. **İlk açılışta macOS onu engeller:** aşağıdaki adımları bir kez izleyin.
 
-### İlk açılış
+### MacZilla'yı ilk açış: bir kez izin verin
 
-Uygulama bir Apple geliştirici kimliğiyle imzalanmamış ve Apple onayından (notarization) geçmemiştir. Bu yüzden macOS ilk açılışta uygulamayı engeller. Bunu bir kez onaylamanız yeterlidir:
+> [!important] macOS, MacZilla'yı ilk açtığınızda engeller. Bu beklenen bir durumdur, bir hata değildir.
+> MacZilla bir Apple geliştirici kimliğiyle imzalanmamış ve Apple onayından (notarization) geçmemiştir; bu yüzden macOS onu doğrulayamaz. Bir kez izin verdiğinizde sonraki açılışlar normal olur:
+>
+> 1. **MacZilla'ya çift tıklayın.** macOS, Apple'ın uygulamayı doğrulayamadığını söyler ve açmaz. **Bitti**'ye tıklayın. *Çöp Sepetine Taşı*'yı **seçmeyin**.
+> 2. **Sistem Ayarları ▸ Gizlilik ve Güvenlik**'i açın ve **Güvenlik** bölümüne inin.
+> 3. **Yine de Aç'a tıklayın:** MacZilla'nın engellendiğini belirten satırdaki düğmeye basın, sonra Mac parolanız ya da Touch ID ile onaylayın. macOS bir kez daha sorarsa yine **Yine de Aç**'ı seçin.
+>
+> *Yine de Aç* görünmüyor mu? 1. adımı tekrarlayın: düğme ancak bir açma denemesinden sonra çıkar. macOS 14'te Finder'da MacZilla'ya sağ tıklayıp **Aç**'ı seçmek de yeterlidir.
 
-1. MacZilla'yı çift tıklayarak açmayı deneyin. macOS, Apple'ın uygulamayı doğrulayamadığını söyleyen bir uyarı gösterir ve uygulamayı açmaz. Uyarıyı **Bitti** ile kapatın; **Çöp Sepetine Taşı**'yı seçmeyin.
-2. **Sistem Ayarları → Gizlilik ve Güvenlik**'i açın ve sayfanın altındaki **Güvenlik** bölümüne inin. MacZilla'nın engellendiğini belirten satırda **Yine de Aç**'a tıklayın. Bu düğmeyi görmüyorsanız 1. adımı tekrarlayın; düğme ancak bir açma denemesinden sonra çıkar.
-3. Mac parolanızla (veya Touch ID ile) onaylayın. macOS bir kez daha sorarsa **Yine de Aç**'ı seçin.
-
-MacZilla açılır; sonraki açılışlarda uyarı çıkmaz. macOS 14'te Finder'da uygulamaya sağ tıklayıp **Aç**'ı seçmek de yeterlidir.
-
-### Terminal ile
-
-Terminal kullanıyorsanız uyarıyla uğraşmadan da açabilirsiniz. `MacZilla.app`'i Uygulamalar klasörüne koyduktan sonra şu komut, macOS'in internetten indirilen dosyalara koyduğu karantina işaretini kaldırır:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/MacZilla.app
-```
-
-Ardından MacZilla her zamanki gibi çift tıklanarak açılır.
+> [!tip] Terminal kullanıyor musunuz? Tek bir komut aynı işi görür.
+> ```bash
+> xattr -dr com.apple.quarantine /Applications/MacZilla.app
+> ```
+> Bu komut, macOS'in internetten indirilen dosyalara koyduğu karantina işaretini kaldırır. Ardından MacZilla her zamanki gibi çift tıklanarak açılır.
 
 ### İndirilen dosyayı doğrulama
 
