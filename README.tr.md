@@ -21,9 +21,52 @@
   <a href="https://gitlab.com/freeware2/maczilla/-/releases">Tüm sürümler</a> · <a href="#kurulum">Kurulum adımları</a> · Arayüz Türkçe ve İngilizcedir
 </p>
 
-![MacZilla ana penceresi: iki sekme, klasör karşılaştırması açık; solda bu Mac, sağda FTPES ile bağlı sunucu, altta süren yüklemeler](docs/screenshots/main-window.png)
+> [!warning] MacZilla'yı ilk açtığınızda macOS onu engeller. Bu beklenen bir durumdur.
+> MacZilla ücretsizdir ve Apple onayından (notarization) geçmemiştir. Bu yüzden ilk açılışta macOS uygulamayı *doğrulayamadığını* söyler ve açmaz. Bunu bir kez onaylamanız yeterlidir:
+>
+> 1. Uyarıda **Bitti**'ye tıklayın. *Çöp Sepetine Taşı*'yı **seçmeyin**.
+> 2. **Sistem Ayarları ▸ Gizlilik ve Güvenlik**'i açın ve **Güvenlik** bölümüne inin.
+> 3. MacZilla'nın engellendiğini belirten satırda **Yine de Aç**'a tıklayın ve parolanız ya da Touch ID ile onaylayın.
+>
+> Terminal'i mi tercih edersiniz? `xattr -dr com.apple.quarantine /Applications/MacZilla.app` komutunu çalıştırıp MacZilla'yı açın.
 
-Ekran görüntüleri İngilizce arayüzden alınmıştır. MacZilla sistem dilini izler; dil Ayarlar'dan değiştirilebilir.
+## Ekran görüntüleri
+
+### ⭐ İki panel, sekmeler ve canlı aktarım kuyruğu
+
+Solda bu Mac, sağda sunucu. Her sekme kendi bağlantısı ve kendi sunucu günlüğüyle çalışır. Burada klasör karşılaştırması açık (yeşil: yalnızca bir tarafta, turuncu: boyutu farklı) ve FTPES üzerinden üç yükleme sürüyor.
+
+<p align="center"><img src="docs/screenshots/main-window.png" alt="MacZilla ana penceresi: iki sekme, klasör karşılaştırması açık; solda bu Mac, sağda FTPES ile bağlı sunucu, altta süren yüklemeler"></p>
+
+### Site Yöneticisi
+
+İç içe olabilen ve sürükle-bırakla doldurulan gruplar, boyutu değiştirilebilen bir pencerede. Şifreler macOS Anahtar Zinciri'nde kalır.
+
+<p align="center"><img src="docs/screenshots/site-manager.png" width="856" alt="Site Yöneticisi: solda iç içe gruplardaki siteler, sağda bir SFTP sitesinin ayarları"></p>
+
+### Klasörleri eşitleme
+
+Eksik ve değişmiş dosyalar karşı tarafa kopyalanır; hiçbir şey silinmez. Değişiklik değiştirilme tarihine göre anlaşıldığı için boyutu aynı kalan düzenlemeler de yakalanır.
+
+<p align="center"><img src="docs/screenshots/synchronize.png" width="576" alt="Eşitle penceresi: yön, kaynak ve hedef, değişmiş sayılma kuralı, alt klasör seçeneği"></p>
+
+### Sertifika denetimi
+
+macOS bir sunucunun sertifikasına güvenmediğinde MacZilla bağlanmadan önce sertifikanın SHA-256 parmak izini gösterir. Güvenmek için açıkça tıklamak gerekir.
+
+<p align="center"><img src="docs/screenshots/certificate.png" width="556" alt="Sertifika doğrulanamadı penceresi: sertifika adı, sorun ve SHA-256 parmak izi"></p>
+
+### Ayarlar
+
+Görünüm, dil, bir sekme bağlıyken yeni bağlantıda ne olacağı ve güncelleme denetimi. Aktarım sekmesinde: hız sınırları (kutu boşsa sınır yok), dosya tarihleri, bildirimler ve Hızlı Bakış.
+
+<p align="center">
+  <img src="docs/screenshots/settings.png" width="400" alt="Ayarlar, Genel sekmesi: görünüm, dil, bağlıyken yeni bağlantı, güncellemeler">
+  &nbsp;
+  <img src="docs/screenshots/settings-transfer.png" width="400" alt="Ayarlar, Aktarım sekmesi: hız sınırları, dosya tarihleri, bildirimler, Hızlı Bakış">
+</p>
+
+<p align="center"><sub>Görüntüler İngilizce arayüzden alınmıştır. MacZilla sistem dilini izler; Ayarlar'dan Türkçeye geçebilirsiniz.</sub></p>
 
 ## Özellikler
 
@@ -69,17 +112,11 @@ Ekran görüntüleri İngilizce arayüzden alınmıştır. MacZilla sistem dilin
 
 macOS'un güvenmediği bir sertifikayla karşılaşıldığında (örneğin kendinden imzalı sertifikalar) MacZilla bağlanmadan önce sorar. Sertifikanın SHA-256 parmak izi gösterilir; "Yalnızca Bu Oturum" ya da "Her Zaman Güven" seçilebilir. Güvenmek için açıkça tıklamak gerekir: Return tuşu bir şey onaylamaz, Esc ve pencerenin başka biçimde kapanması "Bağlanma" sayılır.
 
-<p align="center">
-  <img src="docs/screenshots/certificate.png" width="500" alt="Sertifika doğrulanamadı penceresi: sertifika adı, sorun ve SHA-256 parmak izi">
-</p>
-
 ## Site Yöneticisi
 
 Sık bağlandığınız sunucuları protokol, kullanıcı, SSH anahtarı ve varsayılan dizinleriyle kaydedin (⌘S). Şifreler macOS Anahtar Zinciri'nde saklanır; site listesi `~/Library/Application Support/MacZilla/sites.json` dosyasındadır. Son kullanılan siteler hızlı bağlantı çubuğundaki menüden de açılabilir.
 
 Site Yöneticisi, boyutu değiştirilebilen ayrı bir pencerede açılır.
-
-![Site Yöneticisi: solda gruplara ayrılmış siteler, sağda bir SFTP sitesinin ayarları](docs/screenshots/site-manager.png)
 
 - **Gruplar:** siteleri "Müşteriler" gibi gruplarda toplayın. Listenin altındaki *Grupla* düğmesini kullanın ya da siteye sağ tıklayın.
   - **Sürükle-bırak:** bir ya da birden fazla siteyi seçin (⌘ ya da ⇧ ile tıklayarak) ve bir grubun başlığına sürükleyin. *Sitelerim* başlığına bırakılan siteler gruptan çıkar.
@@ -104,19 +141,11 @@ Eşitle penceresinde iki kural vardır:
 - **Kaynaktaki dosya daha yeniyse** (varsayılan): karşı tarafta olmayan dosyalar ve değiştirilme tarihi karşı taraftakinden yeni olan dosyalar aktarılır. Karşı taraftaki dosya daha yeniyse ona dokunulmaz; tarih öğrenilemiyorsa boyuta bakılır.
 - **Yalnızca boyutu farklıysa:** eski davranış; boyutu aynı kalan değişiklikleri görmez.
 
-<p align="center">
-  <img src="docs/screenshots/synchronize.png" width="500" alt="Eşitle penceresi: yön, kaynak ve hedef klasör, değişmiş sayılma kuralı, alt klasör seçeneği">
-</p>
-
 Tarihler MLSD ya da SFTP ile saniyesine kadar kesin gelir. Yalnızca LIST destekleyen FTP sunucularında listedeki tarih dakika hassasiyetinde ve sunucunun saat dilimindedir; MacZilla bu durumda her dosyayı aktarmadan önce kesin tarihini MDTM komutuyla sorar. Karşılaştırma çubuğundaki renkler ise listedeki tarihleri kullanır; böyle sunucularda "daha yeni/eski" işaretleri saat dilimi farkı kadar yanılabilir, eşitleme kararı yanılmaz.
 
 ## Ayarlar
 
 MacZilla › Ayarlar… (⌘,) penceresinde:
-
-<p align="center">
-  <img src="docs/screenshots/settings.png" width="500" alt="Ayarlar penceresi, Genel sekmesi: görünüm, dil, bağlıyken yeni bağlantı ve güncelleme seçenekleri">
-</p>
 
 - **Görünüm:** Sistem, Açık ya da Koyu (Görüntü › Görünüm menüsünden de değiştirilebilir)
 - **Dil:** sistem dili, Türkçe ya da English, bayraklarıyla. MacZilla yeniden açılınca geçerli olur; bilgi notu ve *Şimdi Yeniden Başlat* düğmesi seçtiğiniz dilde çıkar, böylece o anki dili bilmeyen biri de bulabilir

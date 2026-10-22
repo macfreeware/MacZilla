@@ -21,7 +21,52 @@
   <a href="https://gitlab.com/freeware2/maczilla/-/releases">All releases</a> · <a href="#download-and-install">Installation steps</a> · The interface is in English and Turkish
 </p>
 
-![MacZilla main window: two tabs, folder comparison on; this Mac on the left, a server connected over FTPES on the right, uploads running below](docs/screenshots/main-window.png)
+> [!warning] The first time you open MacZilla, macOS blocks it. This is expected.
+> MacZilla is free and not notarized by Apple, so the first time you open it macOS says it *could not verify* the app and does not open it. You only need to allow it once:
+>
+> 1. In the warning, click **Done**. Do **not** click *Move to Trash*.
+> 2. Open **System Settings ▸ Privacy & Security** and scroll down to **Security**.
+> 3. On the line saying MacZilla was blocked, click **Open Anyway** and confirm with your password or Touch ID.
+>
+> Prefer Terminal? Run `xattr -dr com.apple.quarantine /Applications/MacZilla.app`, then open MacZilla.
+
+## Screenshots
+
+### ⭐ Two panes, tabs and a live transfer queue
+
+This Mac on the left, the server on the right. Every tab is its own connection with its own server log. Here folder comparison is on (green: only on one side, orange: size differs) and three uploads are running over FTPES.
+
+<p align="center"><img src="docs/screenshots/main-window.png" alt="MacZilla main window: two tabs, folder comparison on; this Mac on the left, a server connected over FTPES on the right, uploads running below"></p>
+
+### Site Manager
+
+Sites in groups that you can nest and fill by drag and drop, in a window you can resize. Passwords stay in the macOS Keychain.
+
+<p align="center"><img src="docs/screenshots/site-manager.png" width="856" alt="Site Manager: sites in nested groups on the left, the settings of an SFTP site on the right"></p>
+
+### Synchronize folders
+
+Missing and changed files are copied to the other side; nothing is deleted. Changes are found by modification time, so edits that keep the size the same are caught too.
+
+<p align="center"><img src="docs/screenshots/synchronize.png" width="576" alt="Synchronize window: direction, source and destination, rule for changed files, subfolder option"></p>
+
+### Certificate check
+
+When macOS does not trust a server's certificate, MacZilla shows its SHA-256 fingerprint before connecting. Trusting it takes an explicit click.
+
+<p align="center"><img src="docs/screenshots/certificate.png" width="556" alt="Certificate not verified window: certificate name, problem and SHA-256 fingerprint"></p>
+
+### Settings
+
+Appearance, language, what happens when you connect while a tab is connected, and update checks. On the Transfer tab: speed limits (an empty box means no limit), file times, notifications and Quick Look.
+
+<p align="center">
+  <img src="docs/screenshots/settings.png" width="400" alt="Settings, General tab: appearance, language, new connection while connected, updates">
+  &nbsp;
+  <img src="docs/screenshots/settings-transfer.png" width="400" alt="Settings, Transfer tab: speed limits, file times, notifications, Quick Look">
+</p>
+
+<p align="center"><sub>Screenshots from the English interface. MacZilla follows the system language; you can switch it to Turkish in Settings.</sub></p>
 
 ## Features
 
@@ -67,17 +112,11 @@
 
 When MacZilla meets a certificate macOS does not trust (a self-signed one, for example), it asks before connecting. The certificate's SHA-256 fingerprint is shown; you can choose "Only This Session" or "Always Trust". Trusting takes an explicit click: Return confirms nothing, and Esc or closing the window in any other way counts as "Don't Connect".
 
-<p align="center">
-  <img src="docs/screenshots/certificate.png" width="500" alt="Certificate not verified window: certificate name, problem and SHA-256 fingerprint">
-</p>
-
 ## Site Manager
 
 Save the servers you use often with their protocol, user, SSH key and default folders (⌘S). Passwords are kept in the macOS Keychain; the site list is in `~/Library/Application Support/MacZilla/sites.json`. Recently used sites can also be opened from the menu in the quick connect bar.
 
 The Site Manager opens in its own window, which you can resize.
-
-![Site Manager: sites in groups on the left, the settings of an SFTP site on the right](docs/screenshots/site-manager.png)
 
 - **Groups:** collect sites in groups such as "Clients". Use the *Add to Group* button below the list, or right-click a site.
   - **Drag and drop:** select one or more sites (⌘-click or ⇧-click) and drag them onto a group's header. Drop them on *My Sites* to take them out of their group.
@@ -102,19 +141,11 @@ The Synchronize window has two rules:
 - **If the source file is newer** (default): files missing on the other side and files whose modification time is newer than the other side's are transferred. If the other side's file is newer it is left alone; when the time cannot be found, the size decides.
 - **Only if the size differs:** the old behavior; it misses changes that keep the size the same.
 
-<p align="center">
-  <img src="docs/screenshots/synchronize.png" width="500" alt="Synchronize window: direction, source and destination folder, rule for changed files, subfolder option">
-</p>
-
 Times come exact to the second with MLSD or SFTP. On FTP servers that only support LIST, the time in the listing is to the minute and in the server's time zone; MacZilla then asks for each file's exact time with MDTM before transferring it. The colors in the comparison bar use the listing times, so on such servers the "newer/older" marks can be off by the time zone difference; the synchronize decision is not.
 
 ## Settings
 
 In MacZilla › Settings… (⌘,):
-
-<p align="center">
-  <img src="docs/screenshots/settings.png" width="500" alt="Settings window, General tab: appearance, language, new connection while connected and update options">
-</p>
 
 - **Appearance:** System, Light or Dark (also in View › Appearance)
 - **Language:** system language, Türkçe or English, each with its flag. It takes effect when MacZilla restarts; the note and the *Restart Now* button appear in the language you picked, so you can find them even if you cannot read the current one
