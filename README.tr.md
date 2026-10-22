@@ -186,7 +186,7 @@ Paket Apple Silicon ve Intel Mac'lerde çalışır; macOS 14 veya üstü gerekir
 Zip'i release notlarındaki SHA-256 değeriyle karşılaştırabilirsiniz:
 
 ```bash
-shasum -a 256 ~/Downloads/MacZilla-1.3.1.zip
+shasum -a 256 ~/Downloads/MacZilla-1.3.2.zip
 ```
 
 ## Kaynaktan derleme

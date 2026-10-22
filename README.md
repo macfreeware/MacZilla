@@ -186,7 +186,7 @@ The package runs on Apple Silicon and Intel Macs; macOS 14 or later is required.
 Compare the zip with the SHA-256 value in the release notes:
 
 ```bash
-shasum -a 256 ~/Downloads/MacZilla-1.3.1.zip
+shasum -a 256 ~/Downloads/MacZilla-1.3.2.zip
 ```
 
 ## Building from source
