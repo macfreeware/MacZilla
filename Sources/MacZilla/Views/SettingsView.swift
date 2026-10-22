@@ -2,12 +2,22 @@ import SwiftUI
 
 /// MacZilla › Ayarlar (⌘,).
 struct SettingsView: View {
+    @State private var tab = "general"
+
+    init() {
+        #if DEBUG
+        if let name = ProcessInfo.processInfo.environment["MACZILLA_SETTINGS_TAB"] { _tab = State(initialValue: name) }
+        #endif
+    }
+
     var body: some View {
-        TabView {
+        TabView(selection: $tab) {
             GeneralSettings()
                 .tabItem { Label("Genel", systemImage: "gearshape") }
+                .tag("general")
             TransferSettings()
                 .tabItem { Label("Aktarım", systemImage: "arrow.up.arrow.down") }
+                .tag("transfer")
         }
         .frame(width: 580)
     }
