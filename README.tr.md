@@ -191,7 +191,7 @@ shasum -a 256 ~/Downloads/MacZilla-1.3.1.zip
 
 ## Kaynaktan derleme
 
-Xcode 15 veya üstü ve macOS 14 veya üstü gerekir.
+Xcode 15.3 veya üstü ve macOS 14 veya üstü gerekir.
 
 ```bash
 git clone https://gitlab.com/freeware2/maczilla.git
@@ -227,7 +227,7 @@ Sources/
   FTPKit/      Protokol katmanı: FTP/FTPS (soket + TLS), SFTP (ssh üzerinden), liste ayrıştırma
   MacZilla/    SwiftUI uygulaması: sekmeler, paneller, aktarım kuyruğu, Site Yöneticisi, Ayarlar
   ftpcheck/    Protokol katmanı için komut satırı test aracı
-Scripts/       Uygulama simgesini çizen betik, çeviri denetimi
+Scripts/       Uygulama simgesini Resources/IconArtwork.png çiziminden hazırlayan betik, çeviri denetimi
 Resources/     Info.plist, simge, çeviriler (tr.lproj, en.lproj)
 ```
 
@@ -257,6 +257,6 @@ swift run ftpcheck sftp sunucu.example.com 22 kullanici "" ~/.ssh/id_ed25519
 
 Copyright © 2026 Rafet SAPANCI
 
-MacZilla özgür yazılımdır: [GNU Genel Kamu Lisansı sürüm 3](LICENSE) (GPL-3.0-only) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Değiştirilmiş sürümleri dağıtırsanız kaynak kodunu da aynı lisansla sunmanız gerekir. Program **hiçbir garanti olmaksızın** sunulur; ayrıntılar için [LICENSE](LICENSE) dosyasına bakın.
+MacZilla özgür yazılımdır: [GNU Genel Kamu Lisansı](LICENSE) sürüm 3 ya da (isteğinize bağlı olarak) daha sonraki bir sürümünün (GPL-3.0-or-later) koşullarına göre kullanabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Değiştirilmiş sürümleri dağıtırsanız kaynak kodunu da aynı lisansla sunmanız gerekir. Program **hiçbir garanti olmaksızın** sunulur; ayrıntılar için [LICENSE](LICENSE) dosyasına bakın.
 
 MacZilla FileZilla projesi ile bağlantılı değildir. SFTP bağlantısı macOS ile gelen OpenSSH istemcisi üzerinden kurulur.

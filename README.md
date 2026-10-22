@@ -191,7 +191,7 @@ shasum -a 256 ~/Downloads/MacZilla-1.3.1.zip
 
 ## Building from source
 
-Requires Xcode 15 or later and macOS 14 or later.
+Requires Xcode 15.3 or later and macOS 14 or later.
 
 ```bash
 git clone https://gitlab.com/freeware2/maczilla.git
@@ -227,7 +227,7 @@ Sources/
   FTPKit/      Protocol layer: FTP/FTPS (socket + TLS), SFTP (over ssh), listing parsers
   MacZilla/    SwiftUI app: tabs, panes, transfer queue, Site Manager, Settings
   ftpcheck/    Command-line test tool for the protocol layer
-Scripts/       Script that draws the app icon, translation check
+Scripts/       App icon script (cuts the icon out of Resources/IconArtwork.png), translation check
 Resources/     Info.plist, icon, translations (tr.lproj, en.lproj)
 ```
 
@@ -257,6 +257,6 @@ swift run ftpcheck sftp server.example.com 22 user "" ~/.ssh/id_ed25519
 
 Copyright © 2026 Rafet SAPANCI
 
-MacZilla is free software: you can use, change and redistribute it under the [GNU General Public License version 3](LICENSE) (GPL-3.0-only). If you distribute changed versions, you must offer their source code under the same license. The program comes with **no warranty**; see [LICENSE](LICENSE) for details.
+MacZilla is free software: you can use, change and redistribute it under the [GNU General Public License](LICENSE), version 3 or (at your option) any later version (GPL-3.0-or-later). If you distribute changed versions, you must offer their source code under the same license. The program comes with **no warranty**; see [LICENSE](LICENSE) for details.
 
 MacZilla is not affiliated with the FileZilla project. SFTP connections are made through the OpenSSH client that comes with macOS.
