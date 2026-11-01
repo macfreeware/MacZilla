@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <a href="https://gitlab.com/freeware2/maczilla/-/releases">Tüm sürümler</a> · <a href="#kurulum">Kurulum adımları</a> · Arayüz Türkçe ve İngilizcedir
+  <a href="https://macfreeware.github.io/tr/maczilla/">Web sitesi</a> · <a href="https://gitlab.com/freeware2/maczilla/-/releases">Tüm sürümler</a> · <a href="#kurulum">Kurulum adımları</a> · Arayüz Türkçe ve İngilizcedir
 </p>
 
 > [!warning] MacZilla'yı ilk açtığınızda macOS onu engeller. Bu beklenen bir durumdur.
