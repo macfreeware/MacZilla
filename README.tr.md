@@ -5,8 +5,12 @@
 <h1 align="center">MacZilla</h1>
 
 <p align="center">
-  macOS için FileZilla tarzı, yerel (SwiftUI) bir <b>FTP, FTPS ve SFTP</b> istemcisi.<br>
+  macOS için ücretsiz ve açık kaynak, FileZilla tarzı, yerel (SwiftUI) bir <b>FTP, FTPS ve SFTP</b> istemcisi.<br>
   Tamamen Swift ile yazılmıştır; Electron ya da üçüncü taraf kütüphane gerektirmez.
+</p>
+
+<p align="center">
+  Mac'te <b>FileZilla</b>, <b>Cyberduck</b> ve <b>Transmit</b>'e ücretsiz ve yerel bir alternatif.
 </p>
 
 <p align="center">
@@ -252,6 +256,38 @@ Protokol olarak `ftp`, `ftpes`, `ftps` ya da `sftp` verilebilir. SFTP'de anahtar
 ```bash
 swift run ftpcheck sftp sunucu.example.com 22 kullanici "" ~/.ssh/id_ed25519
 ```
+
+## Sık sorulan sorular
+
+### MacZilla ücretsiz mi?
+
+Evet. MacZilla, GPL-3.0 lisansıyla ücretsiz ve açık kaynaktır; reklam, hesap ya da uygulama içi satın alma yoktur.
+
+### Mac için yerel bir FileZilla var mı?
+
+FileZilla Mac'te de çalışır, ama yerel bir Mac uygulaması değildir. MacZilla aynı fikirle Swift ve SwiftUI ile yazılmıştır: iki panel, sekmeler, aktarım kuyruğu ve Site Yöneticisi. FileZilla'daki sitelerinizi, klasörlerinizi, yer imlerinizi ve parolalarınızı içe aktarabilir.
+
+### SSH anahtarımla SFTP bağlantısı kurabilir miyim?
+
+Evet. SFTP, macOS'un kendi `ssh` aracıyla çalışır; SSH anahtarlarınız, ssh-agent, `~/.ssh/config` ve `known_hosts` Terminal'deki gibi aynen geçerlidir.
+
+### FTPS (TLS üzerinden FTP) destekliyor mu?
+
+Evet, hem açık (FTPES) hem örtük (FTPS) TLS. macOS'un güvenmediği bir sertifika SHA-256 parmak iziyle gösterilir ve ancak siz izin verince bağlanır.
+
+### Parolalarım nerede saklanıyor?
+
+macOS Anahtar Zinciri'nde. Site listesi ise `~/Library/Application Support/MacZilla` içinde bir JSON dosyasıdır.
+
+### Hangi Mac'lerde çalışır?
+
+macOS 14 Sonoma veya üstü yüklü Apple Silicon ve Intel Mac'lerde.
+
+### macOS neden ilk seferde engelliyor?
+
+MacZilla, ücretli geliştirici hesabı gerektiren Apple onayından (notarization) geçmemiştir. **Sistem Ayarları ▸ Gizlilik ve Güvenlik ▸ Yine de Aç** ile bir kez izin verin; ayrıntılar [İlk açılış](#maczillayı-ilk-açış-bir-kez-izin-verin) bölümünde.
+
+<sub>FileZilla, Cyberduck ve Transmit yalnızca karşılaştırma için anılmıştır; MacZilla'nın bunlarla bir bağı yoktur.</sub>
 
 ## Lisans
 

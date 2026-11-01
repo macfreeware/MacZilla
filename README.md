@@ -5,8 +5,12 @@
 <h1 align="center">MacZilla</h1>
 
 <p align="center">
-  A native (SwiftUI) <b>FTP, FTPS and SFTP</b> client for macOS, in the spirit of FileZilla.<br>
+  A free, open-source, native (SwiftUI) <b>FTP, FTPS and SFTP</b> client for macOS, in the spirit of FileZilla.<br>
   Written entirely in Swift; no Electron and no third-party libraries.
+</p>
+
+<p align="center">
+  A free, native alternative to <b>FileZilla</b>, <b>Cyberduck</b> and <b>Transmit</b> on the Mac.
 </p>
 
 <p align="center">
@@ -252,6 +256,38 @@ The protocol can be `ftp`, `ftpes`, `ftps` or `sftp`. For SFTP a key file and ex
 ```bash
 swift run ftpcheck sftp server.example.com 22 user "" ~/.ssh/id_ed25519
 ```
+
+## FAQ
+
+### Is MacZilla free?
+
+Yes. MacZilla is free and open source under the GPL-3.0 license, with no ads, no accounts and no in-app purchases.
+
+### Is there a native FileZilla for Mac?
+
+FileZilla itself runs on the Mac, but it is not a native Mac app. MacZilla is written in Swift and SwiftUI with the same idea: two panes, tabs, a transfer queue and a Site Manager. It can import your FileZilla sites, folders, bookmarks and passwords.
+
+### Can I connect with SFTP using my SSH key?
+
+Yes. SFTP runs through macOS's own `ssh`, so your SSH keys, ssh-agent, `~/.ssh/config` and `known_hosts` work exactly as in Terminal.
+
+### Does it support FTPS (FTP over TLS)?
+
+Yes, both explicit (FTPES) and implicit (FTPS) TLS. A certificate macOS does not trust is shown with its SHA-256 fingerprint and connects only after you allow it.
+
+### Where are my passwords stored?
+
+In the macOS Keychain. The site list itself is a JSON file in `~/Library/Application Support/MacZilla`.
+
+### Which Macs does it run on?
+
+Apple Silicon and Intel Macs with macOS 14 Sonoma or later.
+
+### Why does macOS block it the first time?
+
+MacZilla is not notarized by Apple, which needs a paid developer account. Allow it once in **System Settings ▸ Privacy & Security ▸ Open Anyway**; see [First launch](#first-launch-allow-maczilla-once).
+
+<sub>FileZilla, Cyberduck and Transmit are named only for comparison; MacZilla is not affiliated with them.</sub>
 
 ## License
 
