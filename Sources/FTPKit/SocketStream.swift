@@ -308,6 +308,18 @@ final class SocketStream: @unchecked Sendable {
         }
     }
 
+    /// After the server ended the stream: really closes the socket so the server sees our FIN.
+    /// (`shutdown` fails with ENOTCONN once the peer has closed, so no FIN would be sent until deinit.)
+    func closeAfterEnd() async {
+        _ = try? await onQueue {
+            self.closeLock.lock()
+            defer { self.closeLock.unlock() }
+            if let ssl = self.ssl { SSLClose(ssl) }
+            if self.fd >= 0 { Darwin.close(self.fd); self.fd = -1 }
+            self.closed = true
+        }
+    }
+
     /// Safe from any thread; unblocks a pending read.
     func close() {
         closeLock.lock()

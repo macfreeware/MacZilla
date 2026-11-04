@@ -151,6 +151,7 @@ public final class FTPClient: RemoteClient, @unchecked Sendable {
                 throw Task.isCancelled ? CancellationError() : error
             }
             throttle.finish(total)
+            await data.closeAfterEnd()
             let done = try await self.readResponse()
             if done.code >= 400 { throw FTPError.server(code: done.code, message: done.message) }
         }
@@ -405,6 +406,8 @@ public final class FTPClient: RemoteClient, @unchecked Sendable {
         try await secureData(data)
         var buffer = Data()
         while let chunk = try await data.receive() { buffer.append(chunk) }
+        // Some servers (e.g. Rebex) send 226 only after the client has closed the data connection.
+        await data.closeAfterEnd()
         let done = try await readResponse()
         if done.code >= 400 { throw FTPError.server(code: done.code, message: done.message) }
         lastListing = buffer
