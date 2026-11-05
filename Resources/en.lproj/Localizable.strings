@@ -1,6 +1,7 @@
 /* MacZilla — English. Keys are the Turkish source strings. */
 
 " (kopya)" = " (copy)";
+"%@ klasörüne yazılamadı: %@" = "Could not write to the %1$@ folder: %2$@";
 "%lld aktarım sürüyor ya da sırada; çıkarsanız durdurulacak." = "%lld transfers are running or queued; they will be stopped if you quit.";
 "%lld site seçildi" = "%lld sites selected";
 "\"%@\" için yeni ad:" = "New name for \"%@\":";
@@ -51,6 +52,7 @@
 "Aktarım kuyruğu boş — dosyaları paneller arasında sürükleyip bırakın" = "The transfer queue is empty — drag files between the panes";
 "Aktarım kuyruğunu göster/gizle" = "Show/hide the transfer queue";
 "Aktarımlar bitince bildirim göster" = "Notify when transfers finish";
+"Aktarımlar sürerken güncellenemez. Aktarımlar bitince buradan devam edebilirsiniz." = "MacZilla cannot update while transfers are running. You can continue here when they finish.";
 "Aktarımlar tamamlandı" = "Transfers complete";
 "Alt Grup Oluştur…" = "New Subgroup…";
 "Alt klasörleri de eşitle" = "Include subfolders";
@@ -58,6 +60,8 @@
 "Anahtar seçilmezse ssh-agent ve ~/.ssh içindeki varsayılan anahtarlar denenir. Sunucu anahtarı ilk bağlantıda ~/.ssh/known_hosts dosyasına kaydedilir." = "Without a key, ssh-agent and the default keys in ~/.ssh are tried. The server's host key is saved to ~/.ssh/known_hosts on the first connection.";
 "Anonim" = "Anonymous";
 "anonymous" = "anonymous";
+"Arşiv açılamadı." = "The archive could not be opened.";
+"Arşivdeki uygulama beklenen MacZilla sürümü değil." = "The app in the archive is not the expected MacZilla version.";
 "Atla" = "Skip";
 "Atlandı" = "Skipped";
 "Aç" = "Open";
@@ -120,6 +124,8 @@
 "Bu sekmede bağlan" = "Connect in this tab";
 "Bu sekmedeki bağlantı değiştirilsin mi?" = "Replace the connection in this tab?";
 "Bu sekmedeki bağlantıyı değiştir" = "Replace the connection in this tab";
+"Bu sürümde MacZilla.zip ya da özet dosyası yok." = "This release has no MacZilla.zip or checksum file.";
+"Bu Sürümü Atla" = "Skip This Version";
 "Bu taraftaki daha eski" = "Older on this side";
 "Bu taraftaki daha yeni" = "Newer on this side";
 "Böyle bir dosya yok" = "No such file";
@@ -201,6 +207,7 @@
 "Görüntü › Klasörleri Karşılaştır (⌥⌘C) iki paneldeki farkları renkle gösterir. Eşitle… eksik ya da değişmiş dosyaları karşı tarafa kopyalar; hiçbir şeyi silmez. Dosyaların tarihi aktarımda korunduğu için boyutu aynı kalan değişiklikler de yakalanır." = "View › Compare Folders (⌥⌘C) colors the differences between the two panes. Synchronize… copies missing and changed files to the other side; it never deletes anything. Because file times are kept during transfers, changes that leave the size the same are caught too.";
 "Görünüm" = "Appearance";
 "Gösterilecek öğe yok" = "Nothing to show";
+"Güncelleme kurulamadı" = "The update could not be installed";
 "Güncellemeler denetlenemedi" = "Could not check for updates";
 "Güncellemeleri Denetle…" = "Check for Updates…";
 "Güncellemeleri her gün otomatik denetle" = "Check for updates automatically every day";
@@ -231,11 +238,13 @@
 "İndir" = "Download";
 "İndir ve Göster" = "Download and Show";
 "İndirilen dosya sunucudaki tarihini, yüklenen dosya Mac'teki tarihini alır; böylece tarihe göre karşılaştırma ve eşitleme doğru çalışır. FTP'de sunucunun MFMT komutunu desteklemesi gerekir." = "A downloaded file gets its time on the server and an uploaded file keeps its time on the Mac, so comparing and synchronizing by date work correctly. On FTP the server has to support the MFMT command.";
+"İndirilen dosyanın özeti tutmuyor; dosya bozuk ya da değiştirilmiş olabilir." = "The checksum of the download does not match; the file may be damaged or altered.";
 "İndirilenler" = "Downloads";
 "İndirme" = "Download";
 "İndirme Sayfasını Aç" = "Open Download Page";
 "İndirme: %@ · Yükleme: %@" = "Download: %@ · Upload: %@";
 "İptal" = "Cancel";
+"İsterseniz yeni sürümü indirme sayfasından elle kurabilirsiniz." = "You can install the new version by hand from the download page.";
 "İzin değeri 3 ya da 4 haneli sekizlik sayı olmalı." = "The permission value must be a 3- or 4-digit octal number.";
 "İzin reddedildi" = "Permission denied";
 "İzinler" = "Permissions";
@@ -271,7 +280,7 @@
 "Konumlar" = "Places";
 "Koyu" = "Dark";
 "Kullandığınız %@ sürümü en yeni sürüm." = "Version %@ is the latest version.";
-"Kullandığınız sürüm: %@. Yeni sürümü release sayfasından indirebilirsiniz." = "You have version %@. Download the new version from the release page.";
+"Kullandığınız sürüm: %@" = "You are using version %@";
 "Kullanıcı" = "User";
 "Kullanım" = "Usage";
 "Kutu boşsa hız sınırlanmaz. Sınır o anda süren bütün aktarımlar arasında paylaştırılır." = "An empty box means no limit. The limit is shared by all transfers running at the time.";
@@ -379,6 +388,7 @@
 "Sunucuya Yükle" = "Upload to Server";
 "Sunucuya yükle" = "Upload to the server";
 "Sürüm %@" = "Version %@";
+"Sürüm %@ indiriliyor ve doğrulanıyor. Bitince MacZilla yeniden açılır." = "Downloading and checking version %@. MacZilla will reopen when it is done.";
 "Süz" = "Filter";
 "Sık bağlandığınız sunucuları kaydedin. Şifreler macOS Anahtar Zinciri'nde saklanır." = "Save the servers you connect to often. Passwords are stored in the macOS Keychain.";
 "sınırsız" = "unlimited";
@@ -403,6 +413,7 @@
 "Türkçe" = "Türkçe";
 "URL'yi Kopyala" = "Copy URL";
 "Uygula" = "Apply";
+"Uygulamanın imzası doğrulanamadı." = "The app's signature could not be verified.";
 "Uzak bir dosyaya sağ tıklayıp Düzenle'yi seçin: dosya Mac'teki düzenleyicide açılır ve her kaydettiğinizde sunucuya yüklenir. Boşluk tuşu ya da ⌘Y seçili dosyayı Hızlı Bakış ile gösterir." = "Right-click a remote file and choose Edit: it opens in an editor on your Mac and is uploaded to the server every time you save. Space or ⌘Y shows the selected file in Quick Look.";
 "Uzak dosyaları düzenleyin; kaydedince otomatik yüklenir" = "Edit remote files; saving uploads them automatically";
 "Uzak Sunucu" = "Remote Server";
@@ -432,7 +443,7 @@
 "Yeni Site" = "New Site";
 "Yeni site" = "New site";
 "Yeni site %lld" = "New site %lld";
-"Yeni sürümler gitlab.com/freeware2/maczilla adresinden denetlenir; MacZilla kendini güncellemez, yalnızca haber verir." = "New versions are looked up at gitlab.com/freeware2/maczilla; MacZilla does not update itself, it only lets you know.";
+"Yeni sürümler gitlab.com/freeware2/maczilla adresinden denetlenir; güncelleme yalnızca siz onaylayınca kurulur." = "New versions are checked at gitlab.com/freeware2/maczilla; an update is installed only after you approve it.";
 "Yeniden Adlandır" = "Rename";
 "Yeniden adlandır" = "Rename";
 "Yeniden adlandırılamadı" = "Could not rename";
@@ -465,6 +476,7 @@
 "Çık" = "Quit";
 "Önceki Sekme" = "Previous Tab";
 "Özel anahtar" = "Private key";
+"Özet dosyası okunamadı." = "The checksum file could not be read.";
 "Öğeler Çöp Sepeti'nden geri alınabilir." = "You can get the items back from the Trash.";
 "Üst dizinler" = "Enclosing folders";
 "Üst klasör" = "Enclosing folder";
@@ -475,6 +487,7 @@
 "Şifre / anahtar parolası" = "Password / key passphrase";
 "Şifre ve dosyalar ağda açık metin olarak gider. Sunucu destekliyorsa FTPES ya da SFTP kullanın." = "The password and files travel over the network as plain text. Use FTPES or SFTP if the server supports them.";
 "Şimdi Denetle" = "Check Now";
+"Şimdi Güncelle" = "Update Now";
 "Şimdi Yeniden Başlat" = "Restart Now";
 "Şu anki klasörleri ekle" = "Add the current folders";
 "⌘Y / Boşluk" = "⌘Y / Space";

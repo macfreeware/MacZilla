@@ -310,15 +310,9 @@ private struct ConnectionDialogs: ViewModifier {
             } message: { target in
                 Text("\(model.current.title) bağlantısı açık. \(target.name ?? target.config.label) için yeni bir sekme açılsın mı, yoksa bu sekmedeki bağlantı mı değiştirilsin? Bu davranışı Ayarlar'dan değiştirebilirsiniz.")
             }
-            .alert(model.availableUpdate.map { String(localized: "MacZilla \($0.version) yayımlandı") } ?? "",
-                   isPresented: Binding(get: { model.availableUpdate != nil },
-                                        set: { if !$0 { model.availableUpdate = nil } }),
-                   presenting: model.availableUpdate) { release in
-                Button("İndirme Sayfasını Aç") { NSWorkspace.shared.open(release.url) }
-                    .keyboardShortcut(.defaultAction)
-                Button("Sonra", role: .cancel) {}
-            } message: { _ in
-                Text("Kullandığınız sürüm: \(AppInfo.version ?? "—"). Yeni sürümü release sayfasından indirebilirsiniz.")
+            .sheet(item: Binding(get: { model.availableUpdate }, set: { model.availableUpdate = $0 }),
+                   onDismiss: { if model.updateInstalled { Updater.relaunch() } }) { release in
+                UpdateSheet(release: release)
             }
     }
 }

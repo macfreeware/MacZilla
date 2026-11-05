@@ -9,6 +9,7 @@ enum Prefs {
     static let connectBehavior = "connectBehavior"
     static let checkUpdates = "checkUpdates"
     static let lastUpdateCheck = "lastUpdateCheck"
+    static let skippedUpdateVersion = "skippedUpdateVersion"
     static let notifyTransfers = "notifyTransfers"
     static let dockProgress = "dockProgress"
     static let downloadLimit = "downloadLimitKB"

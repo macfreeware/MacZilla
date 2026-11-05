@@ -1,7 +1,8 @@
 #!/bin/bash
 # Builds MacZilla.app into ./build.
 #   --install  copy it to /Applications
-#   --zip      also make build/release/MacZilla-<version>.zip and its SHA-256
+#   --zip      also make build/release/MacZilla.zip and MacZilla.zip.sha256; the in-app
+#              updater looks for these two names, so they carry no version number
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -43,10 +44,10 @@ codesign --force --sign - "$APP" >/dev/null
 if [[ "${1:-}" == "--zip" ]]; then
     VERSION="$("$PB" -c "Print :CFBundleShortVersionString" "$APP/Contents/Info.plist")"
     mkdir -p build/release
-    ZIP="build/release/MacZilla-$VERSION.zip"
+    ZIP="build/release/MacZilla.zip"
     rm -f "$ZIP" "$ZIP.sha256"
     # The zip holds a folder with the app and the GPL license text.
-    STAGE="build/release/MacZilla-$VERSION"
+    STAGE="build/release/MacZilla"
     rm -rf "$STAGE"
     mkdir -p "$STAGE"
     cp -R "$APP" "$STAGE/"
@@ -54,7 +55,13 @@ if [[ "${1:-}" == "--zip" ]]; then
     ditto -c -k --norsrc --keepParent "$STAGE" "$ZIP"
     rm -rf "$STAGE"
     (cd build/release && shasum -a 256 "$(basename "$ZIP")" > "$(basename "$ZIP").sha256")
-    echo "Paket: $ZIP"
+    # What the updater will check: an intact app of this version, in this place.
+    CHECK="$(mktemp -d)"
+    ditto -x -k "$ZIP" "$CHECK"
+    codesign --verify --deep --strict "$CHECK/MacZilla/MacZilla.app"
+    [[ "$("$PB" -c "Print :CFBundleShortVersionString" "$CHECK/MacZilla/MacZilla.app/Contents/Info.plist")" == "$VERSION" ]]
+    rm -rf "$CHECK"
+    echo "Paket: $ZIP ($VERSION)"
 elif [[ "${1:-}" == "--install" ]]; then
     rm -rf /Applications/MacZilla.app
     cp -R "$APP" /Applications/

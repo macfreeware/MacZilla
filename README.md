@@ -156,7 +156,7 @@ In MacZilla › Settings… (⌘,):
 - **Appearance:** System, Light or Dark (also in View › Appearance)
 - **Language:** system language, Türkçe or English, each with its flag. It takes effect when MacZilla restarts; the note and the *Restart Now* button appear in the language you picked, so you can find them even if you cannot read the current one
 - **New connection while connected:** ask every time, open in a new tab, or replace the one in this tab
-- **Updates:** checks GitLab for new versions once a day; MacZilla does not update itself, it only lets you know
+- **Updates:** checks GitLab for new versions once a day. When there is one, it shows what is new; with **Update Now** MacZilla downloads and checks it, replaces itself and reopens. It never installs anything without your approval, and it does not update while transfers are running
 - **Transfer:** keep the time of transferred files, download and upload speed limits in KB/s (an empty box means no limit), notifications, progress on the Dock, the largest file Quick Look downloads without asking
 
 ## Download and install
@@ -164,7 +164,7 @@ In MacZilla › Settings… (⌘,):
 The package runs on Apple Silicon and Intel Macs; macOS 14 or later is required.
 
 1. Download the latest version with the [download button](https://gitlab.com/freeware2/maczilla/-/releases/permalink/latest/downloads/MacZilla.zip) at the top, or pick a version on the [Releases](https://gitlab.com/freeware2/maczilla/-/releases) page.
-2. Open the zip. Safari usually opens it by itself and a `MacZilla-<version>` folder appears in Downloads; if not, double-click the zip.
+2. Open the zip. Safari usually opens it by itself and a `MacZilla` folder appears in Downloads; if not, double-click the zip.
 3. Drag `MacZilla.app` from that folder to **Applications**. The `LICENSE.txt` next to it is the license text; it does not need to be installed.
 4. Open MacZilla. **The first time, macOS blocks it:** follow the steps below once.
 
@@ -190,7 +190,7 @@ The package runs on Apple Silicon and Intel Macs; macOS 14 or later is required.
 Compare the zip with the SHA-256 value in the release notes:
 
 ```bash
-shasum -a 256 ~/Downloads/MacZilla-1.3.3.zip
+shasum -a 256 ~/Downloads/MacZilla.zip
 ```
 
 ## Building from source
@@ -202,7 +202,7 @@ git clone https://gitlab.com/freeware2/maczilla.git
 cd maczilla
 ./build-app.sh            # makes build/MacZilla.app (universal: Apple Silicon + Intel)
 ./build-app.sh --install  # copies it to /Applications
-./build-app.sh --zip      # build/release/MacZilla-<version>.zip and its SHA-256 file
+./build-app.sh --zip      # build/release/MacZilla.zip and its SHA-256 file
 ```
 
 ## Shortcuts

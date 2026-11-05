@@ -85,7 +85,7 @@ private struct GeneralSettings: View {
                     if checking { ProgressView().controlSize(.small) }
                 }
             } footer: {
-                Text("Yeni sürümler gitlab.com/freeware2/maczilla adresinden denetlenir; MacZilla kendini güncellemez, yalnızca haber verir.")
+                Text("Yeni sürümler gitlab.com/freeware2/maczilla adresinden denetlenir; güncelleme yalnızca siz onaylayınca kurulur.")
                     .font(.caption).foregroundStyle(.secondary)
             }
         }

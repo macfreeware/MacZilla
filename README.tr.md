@@ -156,7 +156,7 @@ MacZilla › Ayarlar… (⌘,) penceresinde:
 - **Görünüm:** Sistem, Açık ya da Koyu (Görüntü › Görünüm menüsünden de değiştirilebilir)
 - **Dil:** sistem dili, Türkçe ya da English, bayraklarıyla. MacZilla yeniden açılınca geçerli olur; bilgi notu ve *Şimdi Yeniden Başlat* düğmesi seçtiğiniz dilde çıkar, böylece o anki dili bilmeyen biri de bulabilir
 - **Bağlıyken yeni bağlantı:** her seferinde sor, yeni sekmede aç ya da bu sekmedekini değiştir
-- **Güncellemeler:** GitLab'deki yeni sürümleri günde bir kez denetleme; MacZilla kendini güncellemez, yalnızca haber verir
+- **Güncellemeler:** GitLab'deki yeni sürümleri günde bir kez denetleme. Yeni sürüm varsa yenilikleri gösterir; **Şimdi Güncelle** ile MacZilla sürümü indirip doğrular, kendini değiştirir ve yeniden açılır. Onayınız olmadan hiçbir şey kurmaz, aktarım sürerken güncelleme yapmaz
 - **Aktarım:** aktarılan dosyaların tarihini koruma, KB/sn cinsinden indirme ve yükleme hız sınırı (kutu boşsa sınır yoktur), bildirimler, Dock'ta ilerleme, Hızlı Bakış'ta sormadan indirilecek en büyük dosya boyutu
 
 ## Kurulum
@@ -164,7 +164,7 @@ MacZilla › Ayarlar… (⌘,) penceresinde:
 Paket Apple Silicon ve Intel Mac'lerde çalışır; macOS 14 veya üstü gerekir.
 
 1. En yeni sürümü en üstteki [indirme düğmesiyle](https://gitlab.com/freeware2/maczilla/-/releases/permalink/latest/downloads/MacZilla.zip) indirin ya da [Releases](https://gitlab.com/freeware2/maczilla/-/releases) sayfasından bir sürüm seçin.
-2. Zip'i açın. Safari genellikle kendiliğinden açar ve İndirilenler klasöründe bir `MacZilla-<sürüm>` klasörü belirir; açmazsa zip'e çift tıklayın.
+2. Zip'i açın. Safari genellikle kendiliğinden açar ve İndirilenler klasöründe bir `MacZilla` klasörü belirir; açmazsa zip'e çift tıklayın.
 3. Klasördeki `MacZilla.app`'i **Uygulamalar** klasörüne sürükleyin. Yanındaki `LICENSE.txt` lisans metnidir, kurulması gerekmez.
 4. MacZilla'yı açın. **İlk açılışta macOS onu engeller:** aşağıdaki adımları bir kez izleyin.
 
@@ -190,7 +190,7 @@ Paket Apple Silicon ve Intel Mac'lerde çalışır; macOS 14 veya üstü gerekir
 Zip'i release notlarındaki SHA-256 değeriyle karşılaştırabilirsiniz:
 
 ```bash
-shasum -a 256 ~/Downloads/MacZilla-1.3.3.zip
+shasum -a 256 ~/Downloads/MacZilla.zip
 ```
 
 ## Kaynaktan derleme
@@ -202,7 +202,7 @@ git clone https://gitlab.com/freeware2/maczilla.git
 cd maczilla
 ./build-app.sh            # build/MacZilla.app oluşturur (universal: Apple Silicon + Intel)
 ./build-app.sh --install  # /Applications klasörüne kopyalar
-./build-app.sh --zip      # build/release/MacZilla-<sürüm>.zip ve SHA-256 dosyası
+./build-app.sh --zip      # build/release/MacZilla.zip ve SHA-256 dosyası
 ```
 
 ## Kısayollar

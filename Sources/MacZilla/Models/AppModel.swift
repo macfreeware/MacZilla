@@ -36,6 +36,8 @@ final class AppModel {
     /// The file shown in the Quick Look panel.
     var previewURL: URL?
     var availableUpdate: UpdateChecker.Release?
+    /// The new app is in place; relaunch as soon as the update sheet has closed.
+    @ObservationIgnored var updateInstalled = false
 
     @ObservationIgnored private var sessionTrusted = Set<String>()
     @ObservationIgnored private var trustWaiters: [String: [CheckedContinuation<Bool, Never>]] = [:]
@@ -387,6 +389,7 @@ final class AppModel {
         d.set(Date(), forKey: Prefs.lastUpdateCheck)
         switch await UpdateChecker.check() {
         case .newer(let release):
+            if !manual, d.string(forKey: Prefs.skippedUpdateVersion) == release.version { return }
             availableUpdate = release
         case .upToDate(let version):
             if manual {

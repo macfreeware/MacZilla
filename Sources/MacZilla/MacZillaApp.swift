@@ -31,7 +31,12 @@ struct MacZillaApp: App {
     @State private var model = AppModel()
     @State private var sites = SiteStore()
 
-    init() { Prefs.registerDefaults() }
+    init() {
+        #if DEBUG
+        Updater.runSelfTestIfRequested()
+        #endif
+        Prefs.registerDefaults()
+    }
 
     var body: some Scene {
         Window("MacZilla", id: "main") {

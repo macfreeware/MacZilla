@@ -30,6 +30,8 @@ import SwiftUI
 ///                                             to MACZILLA_REPORT, its picture to MACZILLA_ALERT_SNAPSHOT
 ///   MACZILLA_CLOSE=seconds                    close the main window after this delay
 ///   MACZILLA_CMD_W=seconds                    press ⌘W after this delay; the result goes to MACZILLA_REPORT
+///   MACZILLA_UPDATE_URL=file:///release.json  read the latest release from here
+///   MACZILLA_UPDATE_TEST=1                    update without a window, print the result, exit
 ///   MACZILLA_SNAPSHOT=/out.png                save the window as PNG, then quit
 @MainActor
 enum DebugHooks {

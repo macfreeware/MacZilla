@@ -1,6 +1,7 @@
 /* MacZilla — Türkçe. Anahtarlar kaynak metinlerin kendisidir. */
 
 " (kopya)" = " (kopya)";
+"%@ klasörüne yazılamadı: %@" = "%@ klasörüne yazılamadı: %@";
 "%lld aktarım sürüyor ya da sırada; çıkarsanız durdurulacak." = "%lld aktarım sürüyor ya da sırada; çıkarsanız durdurulacak.";
 "%lld site seçildi" = "%lld site seçildi";
 "\"%@\" için yeni ad:" = "\"%@\" için yeni ad:";
@@ -51,6 +52,7 @@
 "Aktarım kuyruğu boş — dosyaları paneller arasında sürükleyip bırakın" = "Aktarım kuyruğu boş — dosyaları paneller arasında sürükleyip bırakın";
 "Aktarım kuyruğunu göster/gizle" = "Aktarım kuyruğunu göster/gizle";
 "Aktarımlar bitince bildirim göster" = "Aktarımlar bitince bildirim göster";
+"Aktarımlar sürerken güncellenemez. Aktarımlar bitince buradan devam edebilirsiniz." = "Aktarımlar sürerken güncellenemez. Aktarımlar bitince buradan devam edebilirsiniz.";
 "Aktarımlar tamamlandı" = "Aktarımlar tamamlandı";
 "Alt Grup Oluştur…" = "Alt Grup Oluştur…";
 "Alt klasörleri de eşitle" = "Alt klasörleri de eşitle";
@@ -58,6 +60,8 @@
 "Anahtar seçilmezse ssh-agent ve ~/.ssh içindeki varsayılan anahtarlar denenir. Sunucu anahtarı ilk bağlantıda ~/.ssh/known_hosts dosyasına kaydedilir." = "Anahtar seçilmezse ssh-agent ve ~/.ssh içindeki varsayılan anahtarlar denenir. Sunucu anahtarı ilk bağlantıda ~/.ssh/known_hosts dosyasına kaydedilir.";
 "Anonim" = "Anonim";
 "anonymous" = "anonymous";
+"Arşiv açılamadı." = "Arşiv açılamadı.";
+"Arşivdeki uygulama beklenen MacZilla sürümü değil." = "Arşivdeki uygulama beklenen MacZilla sürümü değil.";
 "Atla" = "Atla";
 "Atlandı" = "Atlandı";
 "Aç" = "Aç";
@@ -121,6 +125,8 @@
 "Bu sekmede bağlan" = "Bu sekmede bağlan";
 "Bu sekmedeki bağlantı değiştirilsin mi?" = "Bu sekmedeki bağlantı değiştirilsin mi?";
 "Bu sekmedeki bağlantıyı değiştir" = "Bu sekmedeki bağlantıyı değiştir";
+"Bu sürümde MacZilla.zip ya da özet dosyası yok." = "Bu sürümde MacZilla.zip ya da özet dosyası yok.";
+"Bu Sürümü Atla" = "Bu Sürümü Atla";
 "Bu taraftaki daha eski" = "Bu taraftaki daha eski";
 "Bu taraftaki daha yeni" = "Bu taraftaki daha yeni";
 "Böyle bir dosya yok" = "Böyle bir dosya yok";
@@ -204,6 +210,7 @@
 "Görüntü › Klasörleri Karşılaştır (⌥⌘C) iki paneldeki farkları renkle gösterir. Eşitle… eksik ya da değişmiş dosyaları karşı tarafa kopyalar; hiçbir şeyi silmez. Dosyaların tarihi aktarımda korunduğu için boyutu aynı kalan değişiklikler de yakalanır." = "Görüntü › Klasörleri Karşılaştır (⌥⌘C) iki paneldeki farkları renkle gösterir. Eşitle… eksik ya da değişmiş dosyaları karşı tarafa kopyalar; hiçbir şeyi silmez. Dosyaların tarihi aktarımda korunduğu için boyutu aynı kalan değişiklikler de yakalanır.";
 "Görünüm" = "Görünüm";
 "Gösterilecek öğe yok" = "Gösterilecek öğe yok";
+"Güncelleme kurulamadı" = "Güncelleme kurulamadı";
 "Güncellemeler denetlenemedi" = "Güncellemeler denetlenemedi";
 "Güncellemeleri Denetle…" = "Güncellemeleri Denetle…";
 "Güncellemeleri her gün otomatik denetle" = "Güncellemeleri her gün otomatik denetle";
@@ -234,11 +241,13 @@
 "İndir" = "İndir";
 "İndir ve Göster" = "İndir ve Göster";
 "İndirilen dosya sunucudaki tarihini, yüklenen dosya Mac'teki tarihini alır; böylece tarihe göre karşılaştırma ve eşitleme doğru çalışır. FTP'de sunucunun MFMT komutunu desteklemesi gerekir." = "İndirilen dosya sunucudaki tarihini, yüklenen dosya Mac'teki tarihini alır; böylece tarihe göre karşılaştırma ve eşitleme doğru çalışır. FTP'de sunucunun MFMT komutunu desteklemesi gerekir.";
+"İndirilen dosyanın özeti tutmuyor; dosya bozuk ya da değiştirilmiş olabilir." = "İndirilen dosyanın özeti tutmuyor; dosya bozuk ya da değiştirilmiş olabilir.";
 "İndirilenler" = "İndirilenler";
 "İndirme" = "İndirme";
 "İndirme Sayfasını Aç" = "İndirme Sayfasını Aç";
 "İndirme: %@ · Yükleme: %@" = "İndirme: %@ · Yükleme: %@";
 "İptal" = "İptal";
+"İsterseniz yeni sürümü indirme sayfasından elle kurabilirsiniz." = "İsterseniz yeni sürümü indirme sayfasından elle kurabilirsiniz.";
 "İzin değeri 3 ya da 4 haneli sekizlik sayı olmalı." = "İzin değeri 3 ya da 4 haneli sekizlik sayı olmalı.";
 "İzin reddedildi" = "İzin reddedildi";
 "İzinler" = "İzinler";
@@ -274,7 +283,7 @@
 "Konumlar" = "Konumlar";
 "Koyu" = "Koyu";
 "Kullandığınız %@ sürümü en yeni sürüm." = "Kullandığınız %@ sürümü en yeni sürüm.";
-"Kullandığınız sürüm: %@. Yeni sürümü release sayfasından indirebilirsiniz." = "Kullandığınız sürüm: %@. Yeni sürümü release sayfasından indirebilirsiniz.";
+"Kullandığınız sürüm: %@" = "Kullandığınız sürüm: %@";
 "Kullanıcı" = "Kullanıcı";
 "Kullanım" = "Kullanım";
 "Kutu boşsa hız sınırlanmaz. Sınır o anda süren bütün aktarımlar arasında paylaştırılır." = "Kutu boşsa hız sınırlanmaz. Sınır o anda süren bütün aktarımlar arasında paylaştırılır.";
@@ -382,6 +391,7 @@
 "Sunucuya yükle" = "Sunucuya yükle";
 "Sunucuya Yükle" = "Sunucuya Yükle";
 "Sürüm %@" = "Sürüm %@";
+"Sürüm %@ indiriliyor ve doğrulanıyor. Bitince MacZilla yeniden açılır." = "Sürüm %@ indiriliyor ve doğrulanıyor. Bitince MacZilla yeniden açılır.";
 "Süz" = "Süz";
 "Sık bağlandığınız sunucuları kaydedin. Şifreler macOS Anahtar Zinciri'nde saklanır." = "Sık bağlandığınız sunucuları kaydedin. Şifreler macOS Anahtar Zinciri'nde saklanır.";
 "sınırsız" = "sınırsız";
@@ -406,6 +416,7 @@
 "Türkçe" = "Türkçe";
 "URL'yi Kopyala" = "URL'yi Kopyala";
 "Uygula" = "Uygula";
+"Uygulamanın imzası doğrulanamadı." = "Uygulamanın imzası doğrulanamadı.";
 "Uzak bir dosyaya sağ tıklayıp Düzenle'yi seçin: dosya Mac'teki düzenleyicide açılır ve her kaydettiğinizde sunucuya yüklenir. Boşluk tuşu ya da ⌘Y seçili dosyayı Hızlı Bakış ile gösterir." = "Uzak bir dosyaya sağ tıklayıp Düzenle'yi seçin: dosya Mac'teki düzenleyicide açılır ve her kaydettiğinizde sunucuya yüklenir. Boşluk tuşu ya da ⌘Y seçili dosyayı Hızlı Bakış ile gösterir.";
 "Uzak dosyaları düzenleyin; kaydedince otomatik yüklenir" = "Uzak dosyaları düzenleyin; kaydedince otomatik yüklenir";
 "Uzak Sunucu" = "Uzak Sunucu";
@@ -435,7 +446,7 @@
 "Yeni site" = "Yeni site";
 "Yeni Site" = "Yeni Site";
 "Yeni site %lld" = "Yeni site %lld";
-"Yeni sürümler gitlab.com/freeware2/maczilla adresinden denetlenir; MacZilla kendini güncellemez, yalnızca haber verir." = "Yeni sürümler gitlab.com/freeware2/maczilla adresinden denetlenir; MacZilla kendini güncellemez, yalnızca haber verir.";
+"Yeni sürümler gitlab.com/freeware2/maczilla adresinden denetlenir; güncelleme yalnızca siz onaylayınca kurulur." = "Yeni sürümler gitlab.com/freeware2/maczilla adresinden denetlenir; güncelleme yalnızca siz onaylayınca kurulur.";
 "Yeniden adlandır" = "Yeniden adlandır";
 "Yeniden Adlandır" = "Yeniden Adlandır";
 "Yeniden adlandırılamadı" = "Yeniden adlandırılamadı";
@@ -468,6 +479,7 @@
 "Çık" = "Çık";
 "Önceki Sekme" = "Önceki Sekme";
 "Özel anahtar" = "Özel anahtar";
+"Özet dosyası okunamadı." = "Özet dosyası okunamadı.";
 "Öğeler Çöp Sepeti'nden geri alınabilir." = "Öğeler Çöp Sepeti'nden geri alınabilir.";
 "Üst dizinler" = "Üst dizinler";
 "Üst klasör" = "Üst klasör";
@@ -478,6 +490,7 @@
 "Şifre / anahtar parolası" = "Şifre / anahtar parolası";
 "Şifre ve dosyalar ağda açık metin olarak gider. Sunucu destekliyorsa FTPES ya da SFTP kullanın." = "Şifre ve dosyalar ağda açık metin olarak gider. Sunucu destekliyorsa FTPES ya da SFTP kullanın.";
 "Şimdi Denetle" = "Şimdi Denetle";
+"Şimdi Güncelle" = "Şimdi Güncelle";
 "Şimdi Yeniden Başlat" = "Şimdi Yeniden Başlat";
 "Şu anki klasörleri ekle" = "Şu anki klasörleri ekle";
 "⌘Y / Boşluk" = "⌘Y / Boşluk";
