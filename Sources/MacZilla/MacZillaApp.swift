@@ -144,6 +144,7 @@ struct MacZillaApp: App {
 
         Window("MacZilla Hakkında", id: "about") {
             AboutView()
+                .environment(model)
                 .environment(sites)
         }
         .windowResizability(.contentSize)

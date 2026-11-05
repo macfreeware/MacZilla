@@ -52,7 +52,9 @@ struct BrandStripe: View {
 
 /// "MacZilla Hakkında" penceresi: kimlik, geliştirici, kısa kullanım ve sistem durumu.
 struct AboutView: View {
+    @Environment(AppModel.self) private var model
     @Environment(SiteStore.self) private var sites
+    @Environment(\.dismissWindow) private var dismissWindow
 
     private enum Tab: String, CaseIterable, Identifiable {
         case general = "Genel", usage = "Kullanım", system = "Sistem"
@@ -68,6 +70,8 @@ struct AboutView: View {
     }
 
     @State private var tab: Tab = .general
+    @State private var checkingUpdates = false
+    @State private var updateStatus: String?
     @State private var sshVersion: String?
     @State private var sshPath: String?
 
@@ -105,11 +109,51 @@ struct AboutView: View {
             Divider()
             footer
         }
-        .frame(width: 560, height: 790)
+        .frame(width: 560, height: 830)
         .task { await probeSSH() }
     }
 
     // MARK: Üst bölüm
+
+    private var updateCheck: some View {
+        VStack(spacing: 4) {
+            HStack(spacing: 6) {
+                Button("Güncellemeleri Denetle…") { checkForUpdates() }
+                    .controlSize(.small)
+                    .disabled(checkingUpdates)
+                if checkingUpdates { ProgressView().controlSize(.small).tint(.white) }
+            }
+            if let updateStatus {
+                Text(updateStatus)
+                    .font(.caption)
+                    .foregroundStyle(.white.opacity(0.85))
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 24)
+            }
+        }
+        .padding(.vertical, 4)
+    }
+
+    /// The answer stays in this window; a new version opens its sheet on the main window.
+    private func checkForUpdates() {
+        checkingUpdates = true
+        updateStatus = nil
+        Task {
+            let outcome = await UpdateChecker.check()
+            checkingUpdates = false
+            UserDefaults.standard.set(Date(), forKey: Prefs.lastUpdateCheck)
+            switch outcome {
+            case .newer(let release):
+                model.availableUpdate = release
+                model.openMainWindow?()
+                dismissWindow(id: "about")
+            case .upToDate(let version):
+                updateStatus = String(localized: "Kullandığınız \(version) sürümü en yeni sürüm.")
+            case .failed(let reason):
+                updateStatus = reason
+            }
+        }
+    }
 
     private var header: some View {
         VStack(spacing: 6) {
@@ -124,6 +168,7 @@ struct AboutView: View {
                 .font(.callout)
                 .foregroundStyle(.white.opacity(0.75))
                 .textSelection(.enabled)
+            updateCheck
             Text("macOS için FileZilla tarzı FTP, FTPS ve SFTP istemcisi")
                 .font(.callout)
                 .foregroundStyle(.white.opacity(0.85))
